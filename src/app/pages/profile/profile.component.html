@@ -1,0 +1,78 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="profile-avatar">
+      <img src="/api/placeholder/150/150" alt="Profile Picture">
+      <button mat-mini-fab color="primary" class="edit-avatar">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+    <div class="profile-info">
+      <h1>John Doe</h1>
+      <p class="subtitle">Senior Software Engineer</p>
+      <div class="profile-stats">
+        <div class="stat">
+          <span class="stat-value">142</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">10.5k</span>
+          <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">89</span>
+          <span class="stat-label">Following</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="Overview">
+      <div class="tab-content">
+        <mat-card class="info-card">
+          <mat-card-header>
+            <mat-card-title>Personal Information</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="info-grid">
+              <div class="info-item">
+                <label>Email</label>
+                <p>john.doe&#64;example.com</p>
+              </div>
+              <div class="info-item">
+                <label>Phone</label>
+                <p>+1 (555) 123-4567</p>
+              </div>
+              <div class="info-item">
+                <label>Location</label>
+                <p>San Francisco, CA</p>
+              </div>
+              <div class="info-item">
+                <label>Joined</label>
+                <p>March 2020</p>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Activity">
+      <div class="tab-content">
+        <mat-card>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item *ngFor="let activity of activities">
+                <mat-icon matListItemIcon>{{activity.icon}}</mat-icon>
+                <div matListItemTitle>{{activity.type}}</div>
+                <div matListItemLine>{{activity.description}}</div>
+                <div matListItemMeta>{{activity.date}}</div>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+    
